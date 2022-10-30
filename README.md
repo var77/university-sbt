@@ -28,6 +28,7 @@ Run local ipfs (if you have infure ipfs project skip this step and config your i
 ```bash
 ipfs config --json 'API.HTTPHeaders.Access-Control-Allow-Methods' '["PUT", "GET", "POST", "OPTIONS"]'
 ipfs config --json API.HTTPHeaders.Access-Control-Allow-Origin '["*"]'
+ipfs daemon
 ```
 
 Open client in browser http://localhost:3000
