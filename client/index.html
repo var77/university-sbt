@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.8.0/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-http-client@59.0.0/dist/index.min.js"></script>
+    <style>
+      .flex {
+        display: flex;
+        justify-content: center;
+      }
+      .flex-row {
+        flex-direction: row;
+      }
+      #add-diploma-container {
+        min-height: 300px;
+        width: 400px;
+        border: 1px solid black;
+        flex-direction: column;
+      }
+      #check-diploma-container {
+        border: 1px solid black;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 400px;
+        margin-top: 20px;
+      }
+      #get-diploma-container {
+        border: 1px solid black;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 400px;
+        margin-top: 20px;
+      }
+      .form-item {
+        justify-content: space-around;
+      }
+      .space-around {
+        justify-content: space-around;
+      }
+      .section-title {
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> University Digital Diplomas </h1>
+    <div class="flex space-around">
+      <div id="add-diploma-container" class="flex flex-center">
+        <h3 class="section-title"> Add student Diploma </h3>
+        <div class="flex flex-row form-item" >
+          <p>Diploma PDF</p>
+          <input type="file" id="add-file-input" />
+        </div>
+        <div class="flex flex-row form-item" >
+          <p>Diploma Image</p>
+          <input type="file" id="diploma-image" />
+        </div>
+        <div class="flex flex-row form-item" >
+          <p>Start Date</p>
+          <input type="date" id="start-date" value="2022-10-05">
+        </div>
+        <div class="flex flex-row form-item" >
+          <p>Graduation Date</p>
+          <input type="date" id="end-date" value="2022-10-21">
+        </div>
+        <div class="flex flex-row form-item" >
+          <p>Diploma Type</p>
+          <select id="diploma-type" value="0">
+            <option value="0">Bachelor</option>
+            <option value="1">Masters</option>
+            <option value="2">Candidate of PHD</option>
+            <option value="3">PHD</option>
+          </select>
+        </div>
+        <div class="flex flex-row form-item" >
+          <p>Student Address</p>
+          <input type="text" id="add-student-address" placeholder="0x000000000000000000" >
+        </div>
+        <div class="flex flex-row form-item" >
+          <p>Faculty</p>
+          <input type="text" id="faculty" placeholder="Computer Sciense" value="Computer Sciense">
+        </div>
+        <div class="flex flex-row form-item" >
+          <p>GPA</p>
+          <input type="text" id="gpa" placeholder="5" value="5">
+        </div>
+        <div class="flex flex-row form-item" >
+          <button id="add-student-diploma" >Add</button>
+          <div class="flex flex-row"></div>
+        </div>
+      </div>
+      
+      <div id="check-diploma-container" class="flex flex-center">
+        <h3 class="section-title"> Check Student Diploma </h3>
+        <div class="flex flex-row form-item" >
+          <p>Diploma PDF</p>
+          <input type="file" id="check-file-input" />
+        </div>
+        <div class="flex form-item" style="flex-direction: column" >
+          <div>
+          <p>Student Address</p>
+          <input type="text" id="check-student-address" placeholder="0x000000000000000000">
+          </div>
+          <div style="">
+            <p id="diploma-info-check"></p>
+          </div>
+        </div>
+        <div class="flex flex-row form-item" >
+          <button id="check-student-diploma" >Check</button>
+          <div class="flex flex-row"></div>
+        </div>
+      </div>
+
+      <div id="get-diploma-container" class="flex flex-center">
+        <h3 class="section-title"> Get Student Diplomas </h3>
+        <div class="flex flex-row form-item" >
+          <p>Student Address</p>
+          <input type="text" id="get-student-address" placeholder="0x000000000000000000">
+        </div>
+        <div class="flex form-item" style="flex-direction: column;">
+          <button id="get-student-diplomas" >Get</button>
+          <div class="" id="get-diplomas-info"></div>
+        </div>
+      </div>
+    </div> 
+    <script src="./sdk.js"></script>
+  </body>
+</html>
